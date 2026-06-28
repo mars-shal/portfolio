@@ -30,7 +30,7 @@ export type Skill = {
 
 export const profile = {
   name: "Michael E. Ibia",
-  handle: "Frontend Developer",
+  handle: "Software Developer",
   avatar: "/avatar.png",
   location: "Nigeria",
   current: {
@@ -38,7 +38,7 @@ export const profile = {
     previous: "AETECH Research Labs",
   },
   intro:
-    "React developer and Computer Engineering student (200 level, Bells University of Technology) with a portfolio of self-built, production-deployed applications. Proficient in React.js, React Native, Vue.js, JavaScript (ES6+), HTML5, and CSS3. Experienced integrating REST APIs, designing component-based UIs, and shipping apps to real users all independently.",
+    "Software developer and Computer Engineering student with a portfolio of self-built, production-deployed applications. Proficient in React.js, React Native, Vue.js, JavaScript (ES6+), HTML5, and CSS3. Experienced integrating REST APIs, designing component-based UIs, and shipping apps to real users all independently.",
   github: "https://github.com/AtomicPositron",
   linkedin: "https://www.linkedin.com/in/michael-ibia/",
   email: "mailto:ietorobong@gmail.com",
