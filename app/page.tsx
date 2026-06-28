@@ -74,9 +74,9 @@ export default function Home() {
           </p>
 
           <p className="mt-2 text-left text-sm text-gray-300" style={bodyFont}>
-            Currently building @ {profile.current.building}, prev @{" "}
-            {profile.current.previous}
+            {profile.phone} &bull; {profile.location}
           </p>
+
           </div>
         </section>
 
@@ -148,7 +148,7 @@ export default function Home() {
           className="flex flex-col gap-4 border-t border-white/10 pt-8 text-xs uppercase tracking-[0.25em] text-gray-400 md:flex-row md:items-center md:justify-between"
           style={bodyFont}
         >
-          <p>Copyright {year} Michael Ibia</p>
+          <p>&copy; {year} Michael Ibia</p>
           <div className="flex flex-wrap items-center gap-3">
             {socialLinks.slice(0, 3).map((link) => (
               <SocialChip key={link.label} link={link} />

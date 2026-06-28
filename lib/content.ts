@@ -29,33 +29,35 @@ export type Skill = {
 };
 
 export const profile = {
-  name: "Michael Ibia",
-  handle: "Software developer",
+  name: "Michael E. Ibia",
+  handle: "Frontend Developer",
   avatar: "/avatar.png",
   cv: "/Michael_Ibia_Resume_.docx",
+  phone: "+234 915 533 2643",
+  location: "Nigeria",
   current: {
-    building: "Friday",
-    previous: "Litmus",
+    building: "Dandori",
+    previous: "AETECH Research Labs",
   },
   intro:
-    "A software developer who builds intuitive, reliable, and scalable digital systems that solve real problems and create meaningful user experiences",
+    "React developer and Computer Engineering student (200 level, Bells University of Technology) with a portfolio of self-built, production-deployed applications. Proficient in React.js, React Native, Vue.js, JavaScript (ES6+), HTML5, and CSS3. Experienced integrating REST APIs, designing component-based UIs, and shipping apps to real users all independently.",
   github: "https://github.com/AtomicPositron",
   linkedin: "https://www.linkedin.com/in/michael-ibia/",
-  email: "mailto:michael.ibia@example.com",
+  email: "mailto:ietorobong@gmail.com",
   twitter: "https://x.com/AtomicPositron",
 };
 
 export const currentlyBuilding: Project[] = [
   {
-    title: "F.R.I.D.A.Y",
-    type: "Desktop Assistant",
+    title: "Dandori",
+    type: "Student Productivity App",
     description:
-      "Siri-style Bun assistant with a glass-and-ember interface for fast, conversational workflows.",
-    stack: ["Bun", "TypeScript", "AI UI"],
+      "Architected and launched a fully functional mobile productivity application from scratch, enabling students to plan classes, organize study sessions, and track academic goals across a multi-screen interface.",
+    stack: ["React Native", "Expo", "Mobile UX"],
     href: "https://github.com/AtomicPositron",
-    image: "/project-friday.svg",
-    imageAlt: "Desktop assistant mockup for F.R.I.D.A.Y",
-    icon: "carbon:code",
+    image: "/project-dandori.svg",
+    imageAlt: "Mobile app mockup for Dandori",
+    icon: "carbon:phone",
   },
   {
     title: "Kevora",
@@ -68,6 +70,17 @@ export const currentlyBuilding: Project[] = [
     imageAlt: "App builder mockup for Kevora",
     icon: "carbon:logo-react",
   },
+  {
+    title: "F.R.I.D.A.Y",
+    type: "Desktop Assistant",
+    description:
+      "Siri-style Bun assistant with a glass-and-ember interface for fast, conversational workflows.",
+    stack: ["Bun", "TypeScript", "AI UI"],
+    href: "https://github.com/AtomicPositron",
+    image: "/project-friday.svg",
+    imageAlt: "Desktop assistant mockup for F.R.I.D.A.Y",
+    icon: "carbon:code",
+  },
 ];
 
 export const tools: Skill[] = [
@@ -76,27 +89,33 @@ export const tools: Skill[] = [
   { label: "React", icon: "nonicons:react-16" },
   { label: "React Native", icon: "carbon:logo-react" },
   { label: "Vue.js", icon: "nonicons:vue-16" },
-  { label: "Next.js", icon: "nonicons:next-16" },
+  { label: "HTML5", icon: "carbon:html" },
+  { label: "CSS3", icon: "carbon:css" },
   { label: "Tailwind CSS", icon: "carbon:code" },
-  { label: "Node.js", icon: "nonicons:node-16" },
-  { label: "Python", icon: "nonicons:python-16" },
-  { label: "Bun", icon: "carbon:build-tool" },
-  { label: "Supabase", icon: "carbon:database-postgresql" },
+  { label: "Expo", icon: "carbon:mobile" },
+  { label: "Vite", icon: "carbon:lightning" },
   { label: "Git", icon: "carbon:logo-git" },
+  { label: "Python", icon: "nonicons:python-16" },
 ];
 
 export const quickFacts: QuickFact[] = [
   {
     title: "Work Experience",
-    teaser: "Frontend engineering intern at AETECH Research Labs, Abuja.",
+    teaser: "Frontend engineering intern at AETECH Research Labs, Abuja (Sep 2025 – Apr 2026).",
     detail:
-      "Built and shipped frontend features in a professional engineering team - first real-world exposure to production codebases and team workflows.",
+      "Built and maintained web interfaces using React.js and TypeScript. Used TypeScript to improve code reliability and reduce runtime errors. Implemented responsive UI components with Tailwind CSS and translated design mockups into functional web pages.",
   },
   {
     title: "Education",
-    teaser: "Computer Engineering @ Bells University of Technology.",
+    teaser: "B.Eng Computer Engineering @ Bells University of Technology, Ogun (200 Level).",
     detail:
-      "Coursework spanning software development, systems programming, and applied math - currently applied through self-directed builds like Friday and Litmus.",
+      "Coursework in Data Structures, Computer Systems, and Programming Fundamentals. Building production-deployed applications alongside studies.",
+  },
+  {
+    title: "Projects Shipped",
+    teaser: "3+ production apps built and deployed independently.",
+    detail:
+      "Emora (AI chatbot, live at emoribot.vercel.app), Dandori (React Native productivity app), Yale School of Arts clone, and more. Every project shipped to real users.",
   },
 ];
 
@@ -104,10 +123,10 @@ export const featuredProjects: Project[] = [
   {
     number: "01",
     title: "Emora",
-    type: "Web App",
+    type: "AI Chatbot Web App",
     description:
-      "Vue.js AI chatbot using the OpenRouter API, deployed live with a focused conversational interface.",
-    stack: ["Vue.js", "OpenRouter", "Deployment"],
+      "Built and shipped a conversational AI web app with real-time chat UI, auto-scroll, Markdown rendering, and toast notifications using Vue's Composition API. Integrated OpenRouter API with dynamic prompt generation across four personality modes and localStorage-based memory persistence.",
+    stack: ["Vue.js", "OpenRouter", "Vite", "Tailwind CSS"],
     href: "https://github.com/AtomicPositron",
     image: "/project-emora.svg",
     imageAlt: "Chatbot interface mockup for Emora",
@@ -117,10 +136,10 @@ export const featuredProjects: Project[] = [
   {
     number: "02",
     title: "Dandori",
-    type: "Mobile App",
+    type: "Student Productivity App",
     description:
-      "React Native productivity app built around planning, execution, and lightweight task management.",
-    stack: ["React Native", "Mobile UX"],
+      "Architected and launched a fully functional mobile productivity application from scratch — enabling students to plan classes, organize study sessions, and track academic goals. Built all front-end components independently with React Native and Expo, designed entirely in Figma first.",
+    stack: ["React Native", "Expo", "Mobile UX"],
     href: "https://github.com/AtomicPositron",
     image: "/project-dandori.svg",
     imageAlt: "Mobile app mockup for Dandori",
@@ -146,5 +165,5 @@ export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: profile.github, icon: "carbon:logo-github" },
   { label: "LinkedIn", href: profile.linkedin, icon: "carbon:logo-linkedin" },
   { label: "Email", href: profile.email, icon: "carbon:email" },
-  { label: "Twitter/X", href: profile.twitter, icon: "carbon:logo-x" },
+  { label: "Phone", href: `tel:${profile.phone}`, icon: "carbon:phone" },
 ];
