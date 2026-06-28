@@ -64,10 +64,10 @@ export function SkillChip({ skill }: { skill: Skill }) {
     <div
       title={skill.label}
       aria-label={skill.label}
-      className="flex w-full max-w-[7rem] flex-col border border-white/15 items-center justify-center gap-2 px-4 py-4 text-white shadow-sm transition hover:-translate-y-1"
+      className="flex w-full flex-col border border-white/15 items-center justify-center gap-2 px-2 py-3 md:px-4 md:py-4 text-white shadow-sm transition hover:-translate-y-1"
     >
-      <Icon icon={skill.icon} className="h-8 w-8 md:h-9 md:w-9" />
-      <span className="text-center text-[11px] leading-none text-white/85">
+      <Icon icon={skill.icon} className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
+      <span className="text-center text-[10px] leading-none text-white/85 sm:text-[11px] md:text-xs">
         {skill.label}
       </span>
     </div>

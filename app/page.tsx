@@ -48,13 +48,13 @@ export default function Home() {
         <ScrollTint />
       </div>
       <div className="relative z-10">
-        <section className="isolate px-5 mt-30  md:px-10">
+        <section className="isolate px-5 mt-16 md:mt-30 md:px-10">
           <div
             className="mx-auto flex max-w-5xl flex-col justify-center gap-y-5 pt-16 pb-8"
           >
           <div className="flex flex-col gap-3">
             <h1
-              className="text-left text-[clamp(3.4rem,10vw,7rem)] leading-[0.8] text-white"
+              className="text-left text-[clamp(3.5rem,9vw,6rem)] leading-[0.8] text-white"
               style={displayFont}
             >
               Michael Ibia
@@ -90,7 +90,7 @@ export default function Home() {
         </Section>
 
         <Section id="tools" title="Tools & Frameworks">
-          <div className="flex flex-wrap w-full max-w-5xl justify-items-center ">
+          <div className="grid w-full max-w-5xl grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
             {tools.map((tool) => (
               <SkillChip key={tool.label} skill={tool} />
             ))}
