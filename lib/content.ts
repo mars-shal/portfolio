@@ -44,6 +44,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/michael-ibia/",
   email: "mailto:ietorobong@gmail.com",
   twitter: "https://x.com/mars-shal",
+  cv: "/Michael_Ibia_Resume_.docx",
 };
 
 export const currentlyBuilding: Project[] = [
@@ -178,12 +179,12 @@ export const moreProjects: Project[] = [
     title: "System Admin Dashboard",
     type: "Admin Panel",
     description:
-      "A full-featured admin dashboard built with React and TypeScript featuring data tables, interactive charts, user management workflows, and role-based access controls.",
-    stack: ["React", "TypeScript", "Tailwind CSS"],
+      "A shell-based system administration dashboard for monitoring server health, managing users, and automating routine system tasks via the command line.",
+    stack: ["Bash", "Shell Scripting", "Linux"],
     href: "https://github.com/mars-shal/System-Admin-Dashboard",
     image: "/project-sysadmin.svg",
     imageAlt: "Dashboard interface mockup",
-    icon: "carbon:dashboard",
+    icon: "carbon:terminal",
   },
   {
     title: "Client Dashboard (AETECH)",

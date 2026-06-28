@@ -22,39 +22,80 @@ const stackIcons: Record<string, string> = {
   "Python": "nonicons:python-16",
   "FastAPI": "carbon:lightning",
   "fastembed": "carbon:ai-status",
+  "HTML5": "carbon:html",
+  "CSS3": "simple-icons:css3",
+  "JavaScript": "nonicons:javascript-16",
+  "React": "nonicons:react-16",
+  "Tailwind CSS": "carbon:code",
+  "REST API": "carbon:data--1",
+  "Expo": "carbon:mobile",
+  "Bash": "carbon:terminal",
+  "Shell Scripting": "carbon:script",
+  "Linux": "carbon:logo-tux",
 };
 
 export function ProjectCard({ project }: { project: Project }) {
+  const isProfileFallback = project.href === "https://github.com/mars-shal";
+  const showGithub = project.href.startsWith("https://github.com/mars-shal/");
+  const showLive = !!project.liveUrl;
+  const showView = !showGithub && !showLive && !isProfileFallback;
+
   return (
-    <Link href={project.href} className="block rounded-xl transition hover:-translate-y-1">
-      <article className="group flex h-full flex-col rounded-xl border border-white/12 px-6 py-7 transition hover:-translate-y-1 hover:bg-white/[0.03]">
-        <div className="flex items-center gap-3">
-          <Icon icon={project.icon} className="h-5 w-5 text-white" />
-          <h3 className="text-xl text-white" style={displayFont}>
-            {project.title}
-          </h3>
-        </div>
-        <p className="mt-3 max-w-xl text-sm leading-6 text-gray-400" style={bodyFont}>
-          {project.description}
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.stack.map((item) => (
-            <span
-              key={item}
-              title={item}
-              aria-label={item}
-              className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-3 py-1.5"
-            >
-              <Icon icon={stackIcons[item] || "carbon:code"} className="h-5 w-5 shrink-0 text-gray-300" />
-            </span>
-          ))}
-        </div>
-        <span className="group relative mt-5 inline-flex w-fit items-center pb-1 text-xs uppercase tracking-[0.22em] text-white">
-          GitHub
-          <span className="absolute bottom-0 left-0 h-px w-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        </span>
-      </article>
-    </Link>
+    <article className="group flex h-full flex-col rounded-xl border border-white/12 bg-white/[0.01] px-6 py-7 transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_20px_60px_rgba(255,255,255,0.06)]">
+      <div className="flex items-center gap-3">
+        <Icon icon={project.icon} className="h-5 w-5 text-white" />
+        <h3 className="text-xl text-white" style={displayFont}>
+          {project.title}
+        </h3>
+      </div>
+      <p className="mt-3 max-w-xl text-sm leading-6 text-gray-400" style={bodyFont}>
+        {project.description}
+      </p>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {project.stack.map((item) => (
+          <span
+            key={item}
+            title={item}
+            aria-label={item}
+            className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 px-3 py-1.5"
+          >
+            <Icon icon={stackIcons[item] || "carbon:code"} className="h-5 w-5 shrink-0 text-gray-300" />
+          </span>
+        ))}
+      </div>
+      <div className="mt-5 flex items-center gap-4">
+        {showGithub && (
+          <Link
+            href={project.href}
+            className="group relative inline-flex w-fit items-center pb-1 text-xs uppercase tracking-[0.22em] text-white"
+            target="_blank"
+          >
+            GitHub →
+            <span className="absolute bottom-0 left-0 h-px w-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          </Link>
+        )}
+        {showLive && (
+          <Link
+            href={project.liveUrl!}
+            className="group relative inline-flex w-fit items-center pb-1 text-xs uppercase tracking-[0.22em] text-gray-400 transition-colors hover:text-white"
+            target="_blank"
+          >
+            Live Demo →
+            <span className="absolute bottom-0 left-0 h-px w-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          </Link>
+        )}
+        {showView && (
+          <Link
+            href={project.href}
+            className="group relative inline-flex w-fit items-center pb-1 text-xs uppercase tracking-[0.22em] text-white"
+            target="_blank"
+          >
+            View Project →
+            <span className="absolute bottom-0 left-0 h-px w-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          </Link>
+        )}
+      </div>
+    </article>
   );
 }
 

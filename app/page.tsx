@@ -73,6 +73,12 @@ export default function Home() {
             {profile.intro}
           </p>
 
+          <div className="mt-2 flex flex-wrap items-center gap-3">
+            {socialLinks.slice(0, 3).map((link) => (
+              <SocialChip key={link.label} link={link} />
+            ))}
+          </div>
+
          
           </div>
         </section>
@@ -102,7 +108,7 @@ export default function Home() {
           </div>
           <div className="mt-8 text-center">
             <Link
-              href={profile.github}
+              href="/projects"
               className="group relative inline-flex items-center pb-1 text-sm uppercase tracking-[0.22em] text-white"
               style={bodyFont}
             >
@@ -120,7 +126,7 @@ export default function Home() {
           </div>
           <div className="mt-8 text-center">
             <Link
-              href={profile.github}
+              href="/projects"
               className="group relative inline-flex items-center pb-1 text-sm uppercase tracking-[0.22em] text-white"
               style={bodyFont}
             >
@@ -141,12 +147,7 @@ export default function Home() {
           style={bodyFont}
         >
           <p>&copy; {year} Michael Ibia</p>
-          <div className="flex flex-wrap items-center gap-3">
-            {socialLinks.slice(0, 3).map((link) => (
-              <SocialChip key={link.label} link={link} />
-            ))}
-          
-          </div>
+         
         </footer>
       </div>
       </div>

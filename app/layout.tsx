@@ -16,7 +16,8 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Michael Ibia | Developer Portfolio",
-  description: "Michael Ibia's developer portfolio.",
+  description:
+    "React Native, Vue.js & React developer building production-deployed apps. Portfolio featuring Emora AI chatbot, Dandori productivity app, Litmus vector search, and more.",
 };
 
 export default function RootLayout({
