@@ -32,8 +32,6 @@ export const profile = {
   name: "Michael E. Ibia",
   handle: "Frontend Developer",
   avatar: "/avatar.png",
-  cv: "/Michael_Ibia_Resume_.docx",
-  phone: "+234 915 533 2643",
   location: "Nigeria",
   current: {
     building: "Dandori",
@@ -90,7 +88,7 @@ export const tools: Skill[] = [
   { label: "React Native", icon: "carbon:logo-react" },
   { label: "Vue.js", icon: "nonicons:vue-16" },
   { label: "HTML5", icon: "carbon:html" },
-  { label: "CSS3", icon: "carbon:css" },
+  { label: "CSS3", icon: "simple-icons:css3" },
   { label: "Tailwind CSS", icon: "carbon:code" },
   { label: "Expo", icon: "carbon:mobile" },
   { label: "Vite", icon: "carbon:lightning" },
@@ -107,7 +105,7 @@ export const quickFacts: QuickFact[] = [
   },
   {
     title: "Education",
-    teaser: "B.Eng Computer Engineering @ Bells University of Technology, Ogun (200 Level).",
+    teaser: "B.Eng Computer Engineering @ Bells University of Technology, Ogun. – In view",
     detail:
       "Coursework in Data Structures, Computer Systems, and Programming Fundamentals. Building production-deployed applications alongside studies.",
   },
@@ -138,7 +136,7 @@ export const featuredProjects: Project[] = [
     title: "Dandori",
     type: "Student Productivity App",
     description:
-      "Architected and launched a fully functional mobile productivity application from scratch — enabling students to plan classes, organize study sessions, and track academic goals. Built all front-end components independently with React Native and Expo, designed entirely in Figma first.",
+      "Architected and launched a fully functional mobile productivity application from scratch enabling students to plan classes, organize study sessions, and track academic goals. Built all front-end components independently with React Native and Expo, designed entirely in Figma first.",
     stack: ["React Native", "Expo", "Mobile UX"],
     href: "https://github.com/AtomicPositron",
     image: "/project-dandori.svg",
@@ -151,7 +149,7 @@ export const featuredProjects: Project[] = [
     title: "Litmus",
     type: "AI Search",
     description:
-      "Python and FastAPI project with vector search, novelty and popularity scoring, and a bento-grid landing page.",
+      "Python and FastAPI project with vector search, novelty and popularity scoring.",
     stack: ["Python", "FastAPI", "fastembed"],
     href: "https://github.com/AtomicPositron",
     image: "/project-litmus.svg",
@@ -164,6 +162,4 @@ export const featuredProjects: Project[] = [
 export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: profile.github, icon: "carbon:logo-github" },
   { label: "LinkedIn", href: profile.linkedin, icon: "carbon:logo-linkedin" },
-  { label: "Email", href: profile.email, icon: "carbon:email" },
-  { label: "Phone", href: `tel:${profile.phone}`, icon: "carbon:phone" },
 ];

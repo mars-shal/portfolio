@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@iconify-json/carbon": "^1.2.23",
     "@iconify-json/nonicons": "^1.2.2",
     "@iconify/react": "^6.0.2",

@@ -73,10 +73,7 @@ export default function Home() {
             {profile.intro}
           </p>
 
-          <p className="mt-2 text-left text-sm text-gray-300" style={bodyFont}>
-            {profile.phone} &bull; {profile.location}
-          </p>
-
+         
           </div>
         </section>
 
@@ -134,13 +131,8 @@ export default function Home() {
         </Section>
 
         <Section id="contact" title="Get in touch">
-          <div className="mx-auto grid w-full max-w-5xl gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)]">
-            <ContactForm email={profile.email} />
-            <div className="flex flex-wrap gap-3 self-start md:justify-end">
-              {socialLinks.map((link) => (
-                <SocialChip key={link.label} link={link} />
-              ))}
-            </div>
+          <div className="w-full max-w-lg">
+            <ContactForm />
           </div>
         </Section>
 
@@ -153,15 +145,7 @@ export default function Home() {
             {socialLinks.slice(0, 3).map((link) => (
               <SocialChip key={link.label} link={link} />
             ))}
-            <Link
-              href={profile.cv}
-              download
-              className="group relative inline-flex items-center pb-1 text-sm text-white"
-              style={bodyFont}
-            >
-              Download CV
-              <span className="absolute bottom-0 left-0 h-px w-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-            </Link>
+          
           </div>
         </footer>
       </div>

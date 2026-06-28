@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { useState } from "react";
 import type { Project, QuickFact, Skill, SocialLink } from "@/lib/content";
 
 const bodyFont = { fontFamily: "var(--font-nunito)" };
@@ -109,52 +108,56 @@ export function SocialChip({ link }: { link: SocialLink }) {
   );
 }
 
-export function ContactForm({ email }: { email: string }) {
-  const [name, setName] = useState("");
-  const [from, setFrom] = useState("");
-  const [message, setMessage] = useState("");
+import { useForm, ValidationError } from "@formspree/react";
+
+const FORMSPREE_ID = "mkolbdpq";
+
+export function ContactForm() {
+  const [state, handleSubmit] = useForm(FORMSPREE_ID);
+
+  if (state.succeeded) {
+    return (
+      <p className="text-sm text-gray-300" style={bodyFont}>
+        Thanks! I&rsquo;ll get back to you soon.
+      </p>
+    );
+  }
 
   return (
-    <form
-      className="grid gap-4"
-      onSubmit={(event) => {
-        event.preventDefault();
-        const subject = encodeURIComponent(`Portfolio contact from ${name || "visitor"}`);
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${from}\n\n${message}`,
-        );
-        window.location.href = `${email}?subject=${subject}&body=${body}`;
-      }}
-    >
+    <form onSubmit={handleSubmit} className="grid gap-4">
       <input
-        value={name}
-        onChange={(event) => setName(event.target.value)}
+        name="name"
+        required
         placeholder="Name"
         className="h-12 rounded-xl border border-white/15 bg-transparent px-4 text-sm text-white placeholder:text-gray-400 focus:border-white focus:outline-none"
         style={bodyFont}
       />
+      <ValidationError field="name" errors={state.errors} />
       <input
-        value={from}
-        onChange={(event) => setFrom(event.target.value)}
+        name="email"
+        required
         placeholder="Email"
         type="email"
         className="h-12 rounded-xl border border-white/15 bg-transparent px-4 text-sm text-white placeholder:text-gray-400 focus:border-white focus:outline-none"
         style={bodyFont}
       />
+      <ValidationError field="email" errors={state.errors} />
       <textarea
-        value={message}
-        onChange={(event) => setMessage(event.target.value)}
+        name="message"
+        required
         placeholder="Message"
         rows={6}
         className="rounded-xl border border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-400 focus:border-white focus:outline-none"
         style={bodyFont}
       />
+      <ValidationError field="message" errors={state.errors} />
       <button
         type="submit"
-        className="group relative inline-flex w-fit items-center pb-1 text-sm uppercase tracking-[0.22em] text-white"
+        disabled={state.submitting}
+        className="group relative inline-flex w-fit items-center pb-1 text-sm uppercase tracking-[0.22em] text-white disabled:opacity-40"
         style={bodyFont}
       >
-        Send
+        {state.submitting ? "Sending..." : "Send"}
         <span className="absolute bottom-0 left-0 h-px w-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </button>
     </form>
