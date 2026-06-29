@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Jersey_20, Nunito } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const jersey = Jersey_20({
@@ -32,6 +33,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-nunito)" }}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
